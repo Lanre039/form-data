@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+</head>
+<body>
+    <div class="data-form">
+        <div class="form">
+            <div class="head">Check your details here</div>
+            <span class="aa">Input unique pin (sent to email provided!)</span>
+            <form id="form-2">
+                <div style="display: flex;">
+                    <input class="input" type="text" name="name" id="uniqueId" placeholder="Unique pin..." required>
+                    <button type="submit" class="btn btn-2">Submit</button>
+                </div>
+            </form>
+            <br>
+            <br>
+            <hr>
+            <p id="error" style="font-size: 1rem;"></p>
+            <table class="table">
+                <tr>
+                  <th>Name</th>
+                  <th>Phone Number</th>
+                  <th>Email</th>
+                </tr>
+                <tr>
+                  <td id="username"></td>
+                  <td id="usermail"></td>
+                  <td id="usernumber"></td>
+                </tr>
+              </table>
+
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
