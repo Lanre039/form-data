@@ -5,7 +5,7 @@ const path = require('path');
 const {sendUniqueId} = require('./emails');
 
 
-const port = process.env.PORT
+const port = process.env.PORT;
 const app = express();
 
 app.use((req, res, next) => {
@@ -40,7 +40,7 @@ app.post('/users', async (req, res) => {
                 res.status(201).send(rows)
             }
         });      
-})
+});
 
 app.get('/users/:id', (req, res) => {
     connection.query('SELECT * FROM form_data WHERE uid=?',[req.params.id], (err, rows, fields) => {
@@ -50,9 +50,9 @@ app.get('/users/:id', (req, res) => {
         } else {
             console.log(err)
         }
-    })
-})
+    });
+});
 
 app.listen(port, () => {
     console.log('Server is up on port ' + port)
-})
+});

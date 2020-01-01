@@ -20,7 +20,7 @@ const formData = document.querySelector('#form');
             email: userEmail.value,
             number: userNumber.value,
             uid: Math.random().toString(36).substr(2, 10)
-        }
+        };
         
         
         fetch(`${host}/users`, {
@@ -33,9 +33,9 @@ const formData = document.querySelector('#form');
         })
         .catch(err => {
             msg.textContent = 'Failed!'
-        })
+        });
     
-    })
+    });
     
 const verifyData = document.querySelector('#form-2');
     
@@ -57,12 +57,12 @@ const verifyData = document.querySelector('#form-2');
             userName.textContent = data[0].name
             userEmail.textContent = data[0].email;
             userNumber.textContent = data[0].number;
-        }).catch((err) => {
+        })
+        .catch((err) => {
                 error.textContent = 'DATA NOT FOUND, CHECK THE ID AND TRY AGAIN!'
-            })
+         });
         
-    })
-
+    });
 
 
 
