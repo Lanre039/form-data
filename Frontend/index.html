@@ -6,15 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
-    <div class="data-form">
+    <div class="data-form page_1">
         <div class="form">
             <div class="head">Input Details Here</div>
             <form action="" id="form">
                 <div>
-                    <span class="aa">Full name:</span>
+                    <span>Full name:</span>
                     <input type="text" name="name" id="name" placeholder="Full Name..." required>
                 </div>
                 <div>
@@ -30,6 +29,33 @@
                     <button type="submit" class="btn">Submit</button>
                 </div>
             </form>
+        </div>
+    </div>
+    <div class="data-form page_2">
+        <div class="form">
+            <div class="head">Check your details here</div>
+            <span>Input unique pin (sent to email provided!)</span>
+            <form id="form-2">
+                <div style="display: flex;">
+                    <input class="input" type="text" name="name" id="uid" placeholder="Unique pin..." required>
+                    <button type="submit" class="btn btn-2">Submit</button>
+                </div>
+            </form>
+            <br>
+            <hr>
+            <p id="error" style="font-size: 1rem;"></p>
+            <table class="table">
+                <tr>
+                  <th>Name</th>
+                  <th>Phone Number</th>
+                  <th>Email</th>
+                </tr>
+                <tr>
+                  <td id="username"></td>
+                  <td id="usermail"></td>
+                  <td id="usernumber"></td>
+                </tr>
+              </table>
         </div>
     </div>
     <script src="./index.js"></script>

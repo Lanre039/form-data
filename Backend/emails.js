@@ -9,7 +9,7 @@ const sendUniqueId = (email, id) => {
         from: 'rajilateeflanre@gmail.com',
         subject: 'UNIQUE PIN',
         text: `Use the unique pin to access the form data: ${id}`,
-        // html: 
+         
     })  
 }
 

@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyparser = require('body-parser');
 const connection = require('./db/sql');
+const path = require('path');
 const {sendUniqueId} = require('./emails');
 
 
@@ -15,6 +16,13 @@ app.use((req, res, next) => {
 });
 
 app.use(bodyparser.json());
+
+const publicDirPath = path.join(__dirname, '../Frontend');
+app.use(express.static(publicDirPath));
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../Frontend/index.html'));
+});
 
 
 app.post('/users', async (req, res) => {
