@@ -3,6 +3,7 @@ const formData = document.querySelector('#form');
 const userName = document.querySelector('#name');
 const userNumber = document.querySelector('#number');
 const userEmail = document.querySelector('#email');
+const msg = document.querySelector('#msg');
 
 
 if (formData != null) {
@@ -20,8 +21,12 @@ if (formData != null) {
                 "Content-Type": "application/json"
             }
         })
-        .then(response => console.log(response))
-        .catch(err => console.log(err))
+        .then(response => {
+            msg.textContent = 'Data submitted successfully!'
+        })
+        .catch(err => {
+            msg.textContent = 'Failed!'
+        })
         
         
     
