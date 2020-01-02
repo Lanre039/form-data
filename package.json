@@ -4,9 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "env-cmd config/dev.env nodemon app.js"
-  },
+    "start": "node Backend/app.js",
+    "dev": "env-cmd Backend/config/dev.env nodemon Backend/app.js"
+  },  
   "author": "",
   "license": "ISC",
   "dependencies": {
