@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>FormApp</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,17 +14,17 @@
             <form action="" id="form">
                 <div>
                     <span>Full name:</span>
-                    <input type="text" name="name" id="name" placeholder="Full Name..." required>
+                    <input type="text" name="name" id="name" placeholder="Full Name..." minlength="5" required>
                 </div>
                 <div>
                     <span>Phone Number:</span>  
-                    <input type="text" name="name" id="number" placeholder="Phone number..."  required>
+                    <input type="text" name="name" id="number" placeholder="Phone number..." minlength="11"  required>
                 </div>
                 <div>
                     <span>Email Address:</span>
                     <input type="text" name="name" id="email" placeholder="Email..." required>
+                    <span id="validEmail"></span>
                 </div>
-                <p id="msg" style="font-size: 1rem; text-align: right; padding-top: 1rem;"></p>
                 <div class="center-btn">
                     <button type="submit" class="btn">Submit</button>
                 </div>

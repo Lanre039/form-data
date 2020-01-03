@@ -1,19 +1,37 @@
 const host = 'http://localhost:3000';
-const formData = document.querySelector('#form');
 
+const userEmail = document.querySelector('#email');
+
+function validateEmail() {
+    const validEmail = document.querySelector('#validEmail');
+    const page_1 = document.querySelector('.page_1');
+    const page_2 = document.querySelector('.page_2');
+    
+    const emailID = userEmail.value;
+    const includeAt = emailID.indexOf("@");
+    const includeDot = emailID.lastIndexOf(".");
+    
+    if (includeAt < 1 || ( includeDot - includeAt < 2 )) {
+        validEmail.textContent = 'Please enter correct email ID'
+        userEmail.focus();
+        return false;
+    } else {
+        page_1.style.display = 'none';
+        page_2.style.display = 'block';
+        
+    }
+}
+
+const formData = document.querySelector('#form');
 
     formData.addEventListener('submit', (e) => {
         e.preventDefault();
 
         const userName = document.querySelector('#name');
         const userNumber = document.querySelector('#number');
-        const userEmail = document.querySelector('#email');
         const msg = document.querySelector('#msg');
-        const page_1 = document.querySelector('.page_1');
-        const page_2 = document.querySelector('.page_2');
 
-        page_1.style.display = 'none';
-        page_2.style.display = 'block';
+        validateEmail()
         
         const data = {
             name: userName.value,
@@ -29,10 +47,10 @@ const formData = document.querySelector('#form');
             body: JSON.stringify(data)
         })
         .then(response => {
-            msg.textContent = 'Data submitted successfully!'
+            console.log('Data submitted successfully!')
         })
         .catch(err => {
-            msg.textContent = 'Failed!'
+            console.log('Failed!')
         });
     
     });
